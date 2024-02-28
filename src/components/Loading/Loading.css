@@ -1,0 +1,12 @@
+@keyframes loadAnimation {
+  from {
+    opacity: 10000;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: loadAnimation 10s;
+}
