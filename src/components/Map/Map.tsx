@@ -4,7 +4,6 @@ import L from 'leaflet';
 import countriesGeoJson from '../../data/countries.json';
 import { useNavigate } from 'react-router-dom';
 import './Map.css';
-import LoadingContext from './../Loading/LoadingContext.js';
 
 
 const MapComponent = () => {
@@ -30,7 +29,6 @@ const MapComponent = () => {
 const GeoJSONLayer = () => {
   const map = useMap();
   const navigate = useNavigate();
-  const { playAnimation } = useContext(LoadingContext);
 
   useEffect(() => {
     const geoJsonLayer = L.geoJSON(countriesGeoJson as any, {
@@ -44,18 +42,7 @@ const GeoJSONLayer = () => {
       onEachFeature: (feature, layer) => {
         layer.on('click', () => {
           const countryName = feature.properties.name;
-          
-    
-        
-          // Start the animation
-          playAnimation(true);
-        
-          setTimeout(() => {
-            // Set the animation back to false after it's done
-            playAnimation(false);
-            // Navigate after the animation duration
-            navigate(`/breads/${countryName}`);
-          }, 10000); // 10 seconds
+            navigate(`/breads/${countryName}`);      
         });
       },
     });
