@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import countriesGeoJson from '../../data/countries.json';
 import { useNavigate } from 'react-router-dom';
 import './Map.css';
+
 
 const MapComponent = () => {
   return (
@@ -41,7 +42,7 @@ const GeoJSONLayer = () => {
       onEachFeature: (feature, layer) => {
         layer.on('click', () => {
           const countryName = feature.properties.name;
-          navigate(`/breads/${countryName}`);
+            navigate(`/breads/${countryName}`);      
         });
       },
     });
