@@ -112,3 +112,5 @@ To get this app running on your computer:
 - Utilizing Leaflet mapping with a custom GeoJSON file for our countries
 - Group teamwork made planning, communication, and collaboration very smooth
 - Refactoring this repo for a restructured JSON response after forking off the C# iteration
+
+Note: This is a forked repository was created to test the implemention of a loading page. Please refer to the original repository for detailed information and updated repository.
